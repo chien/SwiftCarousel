@@ -170,7 +170,11 @@ public class SwiftCarousel: UIView {
         }
         
         scrollView.contentSize = CGSize(width: scrollViewWidth, height: CGRectGetHeight(frame))
-        maxVelocity = scrollView.contentSize.width / 6.0
+        if self.configuration.maxVelocity != nil {
+            maxVelocity = self.configuration.maxVelocity
+        } else {
+            maxVelocity = scrollView.contentSize.width / 6.0
+        }
         selectItem(self.configuration.defaultSelectedIndex, animated: false)
     }
     

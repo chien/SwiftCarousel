@@ -97,6 +97,7 @@ class ChoicesProxy: CollectionType {
 public class SwiftCarouselConfiguration {
     public var selectByTapEnabled = true
     public var preloadItemViewCount = 1
+    public var maxVelocity: CGFloat! = nil
     public var scrollType: SwiftCarouselScroll = .Default {
         didSet {
             if case .Max(let number) = scrollType where number <= 0 {
@@ -104,6 +105,7 @@ public class SwiftCarouselConfiguration {
             }
         }
     }
+    public var infiniteScroll = false
     /// Resize type of the carousel chosen from SwiftCarouselResizeType.
     public var resizeType: SwiftCarouselResizeType = .WithoutResizing(0.0)
     /// If selected index is < 0, set it as nil.
